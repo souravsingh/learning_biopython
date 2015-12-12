@@ -18,5 +18,4 @@ install:
   - ./fetch_sample_data.sh
 
 script:
-  - python tests/test_consistency.py
   - python tests/test_scripts.py
