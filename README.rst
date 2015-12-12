@@ -3,7 +3,7 @@ Introduction to Biopython
 =========================
 
 This is a basic introduction to Biopython, intended for a classroom based workshop.
-It assumes you have been introduced to both working at the command line, and basic
+It assumes you have been introduced to both working at the command line, and some basic
 Python.
 
 The Biopython website http://www.biopython.org has more information including the 
