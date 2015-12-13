@@ -1,6 +1,6 @@
 from Bio import SeqIO
-input_filename = "NC_000913.faa"
-output_filename = "NC_000913_long_only.faa"
+input_filename = "NC_013361.faa"
+output_filename = "NC_013361_long_only.faa"
 count = 0
 total = 0
 output_handle = open(output_filename, "w")
