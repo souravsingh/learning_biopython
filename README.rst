@@ -2,6 +2,10 @@
 Introduction to Biopython
 =========================
 
+.. image:: https://travis-ci.org/souravsingh/learning_biopython.png?branch=master
+   :alt: Current status of TravisCI build for master branch
+   :target: https://travis-ci.org/souravsingh/learning_biopython/builds
+
 This is a basic introduction to Biopython.It assumes you have been introduced 
 to both working at the command line, and some basic Python.
 
