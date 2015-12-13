@@ -1,5 +1,5 @@
 from Bio import SeqIO
-filename = "NC_000913.faa"
+filename = "NC_013361.faa"
 count = 0
 total = 0
 for record in SeqIO.parse(filename, "fasta"):
