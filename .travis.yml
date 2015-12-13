@@ -15,7 +15,7 @@ python:
 
 install:
   - pip install biopython
-  - ./fetch_sample_data.sh
+  - bash fetch_sample_data.sh
 
 script:
   - python tests/test_scripts.py
