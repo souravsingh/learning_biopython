@@ -1,6 +1,6 @@
 from Bio import SeqIO
-input_filename = "PGSC_DM_v3.4_pep_representative.fasta"
-output_filename = "PGSC_DM_v3.4_pep_rep_no_stars.fasta"
+input_filename = "PGSC_DM_v4.03_unanchored_regions_chr00.fasta"
+output_filename = "PGSC_DM_v4.03_unanchored_regions_chr00_edited.fasta"
 output_handle = open(output_filename, "w")
 for record in SeqIO.parse(input_filename, "fasta"):
     if record.seq.endswith("*"):
