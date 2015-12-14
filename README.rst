@@ -5,6 +5,9 @@ Introduction to Biopython
 This is a basic introduction to Biopython.It assumes you have been introduced 
 to both working at the command line, and some basic Python.
 
+The content was created as part of the Workshop session for SciPy India 2015.
+The slides can be accessed here <https://docs.google.com/presentation/d/1rPxLAGNZKULCPxkVFvh4h8J476Om43eMBiE7kKe0REg/edit#slide=id.p>
+
 The Biopython website http://www.biopython.org has more information including the 
 `Biopython Tutorial & Cookbook <http://biopython.org/DIST/docs/tutorial/Tutorial.html>`_
 (html, `PDF available <http://biopython.org/DIST/docs/tutorial/Tutorial.pdf>`_),
