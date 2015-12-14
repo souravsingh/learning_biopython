@@ -85,24 +85,24 @@ command line tool:
 
 .. sourcecode:: console
 
-    $ git clone https://github.com/souravsingh/biopython_workshop.git
+    $ git clone https://github.com/souravsingh/learning_biopython.git
 
 Alternatively, depending on your firewall settings, use:
 
 .. sourcecode:: console
 
-    $ git clone git@github.com:souravsingh/biopython_workshop.git
+    $ git clone git@github.com:souravsingh/learning_biopython.git
 
 To learn more about ``git`` and software version control, I recommend attending using
 `Try Git <https://try.github.io/levels/1/challenges/1>`_
 or similar courses.
 
-This should make a new sub-directory, ``biopython_workshop/`` which we will now
+This should make a new sub-directory, ``learning_biopython/`` which we will now
 change into:
 
 .. sourcecode:: console
 
-    $ cd biopython_workshop
+    $ cd learning_biopython
 
 Most of the examples use real biological data files. You should download them
 now using the `provided shell script <fetch_sample_data.sh>`_:
