@@ -21,7 +21,7 @@ Converting a sequence file
 --------------------------
 
 Recall we looked at the *E. coli* K12 chromosome as a FASTA file
-``NC_000913.fna`` and as a GenBank file ``NC_000913.gbk``. Suppose
+``NC_013361.fna`` and as a GenBank file ``NC_013361.gbk``. Suppose
 we only had the GenBank file, and wanted to turn it into a FASTA file?
 
 Biopython's ``SeqIO`` module can read and write lots of sequence file
@@ -37,8 +37,8 @@ Here's a very simple script which uses this function:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    input_filename = "NC_000913.gbk"
-    output_filename = "NC_000913_converted.fasta"
+    input_filename = "NC_013361.gbk"
+    output_filename = "NC_013361_converted.fasta"
     count = SeqIO.convert(input_filename, "gb", output_filename, "fasta")
     print(str(count) + " records converted")
 
@@ -54,8 +54,8 @@ sequences it converted - here only one. Also have a look at the output file:
 
 .. sourcecode:: console
 
-    $ head NC_000913_converted.fasta 
-    >NC_000913.3 Escherichia coli str. K-12 substr. MG1655, complete genome.
+    $ head NC_013361_converted.fasta 
+    >NC_013361.3 Escherichia coli str. K-12 substr. MG1655, complete genome.
     AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTC
     TGATAGCAGCTTCTGAACTGGTTACCTGCCGTGAGTAAATTAAAATTTTATTGACTTAGG
     TCACTAAATACTTTAACCAATATAGGCATAGCGCACAGACAGATAAAAATTACAGAGTAC
@@ -76,8 +76,8 @@ you'd do this explictly:
 .. sourcecode::	python
 
     from Bio import SeqIO
-    input_filename = "NC_000913.gbk"
-    output_filename = "NC_000913_converted.fasta"
+    input_filename = "NC_013361.gbk"
+    output_filename = "NC_013361_converted.fasta"
     records_iterator = SeqIO.parse(input_filename, "gb")
     count = SeqIO.write(records_iterator, output_filename, "fasta")    
     print(str(count) + " records converted")
@@ -92,8 +92,8 @@ it just one record:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    input_filename = "NC_000913.gbk"
-    output_filename = "NC_000913_converted.fasta"
+    input_filename = "NC_013361.gbk"
+    output_filename = "NC_013361_converted.fasta"
     record = SeqIO.read(input_filename, "gb")
     SeqIO.write(record, output_filename, "fasta")
 
@@ -120,8 +120,8 @@ You might try something like this:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    input_filename = "NC_000913.faa"
-    output_filename = "NC_000913_long_only.faa"
+    input_filename = "NC_013361.faa"
+    output_filename = "NC_013361_long_only.faa"
     count = 0
     total = 0
     for record in SeqIO.parse(input_filename, "fasta"):
@@ -142,9 +142,9 @@ Save this as ``length_filter_naive.py``, and run it, and check it worked.
 
 .. sourcecode:: console
 
-    $ grep -c "^>" NC_000913_long_only.faa
+    $ grep -c "^>" NC_013361_long_only.faa
     1
-    $ cat NC_000913_long_only.faa 
+    $ cat NC_013361_long_only.faa 
     >gi|16132220|ref|NP_418820.1| predicted methyltransferase [Escherichia coli str. K-12 substr. MG1655]
     MRITIILVAPARAENIGAAARAMKTMGFSDLRIVDSQAHLEPATRWVAHGSGDIIDNIKV
     FPTLAESLHDVDFTVATTARSRAKYHYYATPVELVPLLEEKSSWMSHAALVFGREDSGLT
@@ -165,8 +165,8 @@ Here's a working version of the script, save this as ``length_filter.py``:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    input_filename = "NC_000913.faa"
-    output_filename = "NC_000913_long_only.faa"
+    input_filename = "NC_013361.faa"
+    output_filename = "NC_013361_long_only.faa"
     count = 0
     total = 0
     output_handle = open(output_filename, "w")
@@ -185,7 +185,7 @@ creating and replacing several thousand small files is slow):
 
     $ python length_filter.py
     3719 records selected out of 4141
-    $ grep -c "^>" NC_000913_long_only.faa 
+    $ grep -c "^>" NC_013361_long_only.faa 
     3719
 
 Yay!
