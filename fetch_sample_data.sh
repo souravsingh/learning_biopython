@@ -29,7 +29,7 @@ echo "=========================================================="
 echo "Fetch proteins from Potato Genome Sequencing Consortium"
 echo "=========================================================="
 
-$FETCH http://potato.plantbiology.msu.edu/data/PGSC_DM_v3.4_pep_representative.fasta.zip
+$FETCH solanaceae.plantbiology.msu.edu/data/PGSC_DM_v4.03_pseudomolecules.fasta.zip
 unzip -o PGSC_DM_v3.4_pep_representative.fasta.zip
 
 echo "===================================="
