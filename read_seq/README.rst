@@ -52,12 +52,12 @@ Counting Records
 ----------------
 
 We'll start by looking at the protein sequence in the FASTA amino acid file,
-``NC_000913.faa``. First take a quick peek using some command line tools like
+``NC_013361.faa``. First take a quick peek using some command line tools like
 ``head`` to look at the start of the file:
 
 .. sourcecode:: console
 
-    $ head NC_000913.faa 
+    $ head NC_013361.faa 
     >gi|16127995|ref|NP_414542.1| thr operon leader peptide [Escherichia coli str. K-12 substr. MG1655]
     MKRISTTITTTITITTGNGAG
     >gi|16127996|ref|NP_414543.1| fused aspartokinase I and homoserine dehydrogenase I [Escherichia coli str. K-12 substr. MG1655]
@@ -76,7 +76,7 @@ than sign (which is how individual FASTA format sequences are marked):
 
 .. sourcecode::	console
 
-    $ grep -c "^>" NC_000913.faa 
+    $ grep -c "^>" NC_013361.faa 
     4141
 
 Now let's count the records with Biopython using the ``SeqIO.parse`` function:
@@ -88,13 +88,13 @@ Now let's count the records with Biopython using the ``SeqIO.parse`` function:
     [GCC 4.4.6 20120305 (Red Hat 4.4.6-4)] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>> from Bio import SeqIO
-    >>> filename = "NC_000913.faa"
+    >>> filename = "NC_013361.faa"
     >>> count = 0
     >>> for record in SeqIO.parse(filename, "fasta"):
     ...     count = count + 1
     ...
     >>> print("There were " + str(count) + " records in file " + filename)
-    There were 4141 records in file NC_000913.faa
+    There were 4141 records in file NC_13361.faa
 
 
 
@@ -110,7 +110,7 @@ Edit your new file ``count_fasta.py`` to contain the following:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    filename = "NC_000913.faa"
+    filename = "NC_013361.faa"
     count = 0
     for record in SeqIO.parse(filename, "fasta"):
         count = count + 1
@@ -121,7 +121,7 @@ This time it should be easy to copy & paste in one go. We can now run this:
 .. sourcecode::	    console
 
     $ python count_fasta.py
-    There were 4141 records in file NC_000913.faa
+    There were 4141 records in file NC_013361.faa
 
 
 
@@ -143,7 +143,7 @@ This simple example prints out the record identifers and their lengths:
 .. sourcecode:: python
 
     from Bio import SeqIO
-    filename = "NC_000913.faa"
+    filename = "NC_013361.faa"
     for record in SeqIO.parse(filename, "fasta"):
         print("Record " + record.id + ", length " + str(len(record.seq)))
 
@@ -193,7 +193,7 @@ and count how many records fail this. Let's create a script called ``check_start
 .. sourcecode:: python
 
     from Bio import SeqIO
-    filename = "NC_000913.faa"
+    filename = "NC_013361.faa"
     bad = 0
     for record in SeqIO.parse(filename, "fasta"):
         if not record.seq.startswith("M"):
@@ -206,7 +206,7 @@ If you run that, you should find this *E. coli* protein set all had leading meth
 .. sourcecode::	console
 
     $ python check_start_met.py
-    Found 0 records in NC_000913.faa which did not start with M
+    Found 0 records in NC_013361.faa which did not start with M
 
 Good - no strange proteins. This genome has been completely sequenced and a lot of
 work has been done on the annotation, so it is a 'Gold Standard'. Now try this on
@@ -279,9 +279,9 @@ can use ``SeqIO.read(...)``.
 .. sourcecode:: pycon
 
     >>> from Bio import SeqIO
-    >>> record = SeqIO.read("NC_000913.fna", "fasta")
+    >>> record = SeqIO.read("NC_013361.fna", "fasta")
     >>> print(record.id + " length " + str(len(record)))
-    gi|556503834|ref|NC_000913.3| length 4641652
+    gi|556503834|ref|NC_013361.3| length 4641652
 
 
 ----------------------
@@ -295,17 +295,17 @@ formats (see the table on the `SeqIO wiki page <http://biopython.org/wiki/SeqIO>
 
 If you work with finished genomes, you'll often see nicely annotated files in
 the EMBL or GenBank format. Let's try this with the *E. coli* K12 GenBank file,
-``NC_000913.gbk``, based on the previous example:
+``NC_013361.gbk``, based on the previous example:
 
 .. sourcecode::	pycon
 
     >>> from Bio import SeqIO
-    >>> fasta_record = SeqIO.read("NC_000913.fna", "fasta")
+    >>> fasta_record = SeqIO.read("NC_013361.fna", "fasta")
     >>>	print(fasta_record.id + " length " + str(len(fasta_record)))
-    gi|556503834|ref|NC_000913.3| length 4641652
-    >>> genbank_record = SeqIO.read("NC_000913.gbk", "genbank")
+    gi|556503834|ref|NC_013361.3| length 4641652
+    >>> genbank_record = SeqIO.read("NC_013361.gbk", "genbank")
     >>>	print(genbank_record.id + " length " + str(len(genbank_record)))
-    NC_000913.3 length 4641652
+    NC_013361.3 length 4641652
 
 All we needed to change was the file format argument to the ``SeqIO.read(...)``
 function - and we could load a GenBank file instead. You'll notice the GenBank
