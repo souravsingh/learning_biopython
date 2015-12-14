@@ -213,8 +213,8 @@ Consider the following example (which I'm calling ``cut_star_dangerous.py``):
 .. sourcecode:: python
 
     from Bio import SeqIO
-    input_filename = "PGSC_DM_v3.4_pep_representative.fasta"
-    output_filename = "PGSC_DM_v3.4_pep_rep_no_stars.fasta"
+    input_filename = "PGSC_DM_v4.03_unanchored_regions_chr00.fasta"
+    output_filename = "PGSC_DM_v4.03_unanchored_regions_chr00_out.fasta"
     output_handle = open(output_filename, "w")
     for record in SeqIO.parse(input_filename, "fasta"):
         cut_record = record[:-1]  # remove last letter
@@ -248,7 +248,7 @@ this. Recap:
 
     from Bio import SeqIO
     wanted_ids = ["PGSC0003DMP400019313", "PGSC0003DMP400020381", "PGSC0003DMP400020972"]
-    input_filename = "PGSC_DM_v3.4_pep_representative.fasta"
+    input_filename = "PGSC_DM_v4.03_unanchored_regions_chr00.fasta"
     output_filename = "wanted_potato_proteins.fasta"
     count = 0
     total = 0
@@ -289,7 +289,7 @@ Python dictionary:
 .. sourcecode:: pycon
 
     >>> from Bio import SeqIO
-    >>> filename = "PGSC_DM_v3.4_pep_representative.fasta"
+    >>> filename = "PGSC_DM_v4.03_unanchored_regions_chr00.fasta"
     >>> fasta_index = SeqIO.index(filename, "fasta")
     >>> print(str(len(fasta_index)) + " records in " + filename)
     >>> "PGSC0003DMP400019313" in fasta_index
