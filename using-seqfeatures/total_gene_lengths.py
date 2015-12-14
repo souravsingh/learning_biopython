@@ -1,5 +1,5 @@
 from Bio import SeqIO
-record = SeqIO.read("NC_000913.gbk", "genbank")
+record = SeqIO.read("NC_013361.gbk", "genbank")
 print("Total length of genome is " + str(len(record)))
 total = 0
 for feature in record.features:
