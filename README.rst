@@ -17,16 +17,9 @@ which is worth going through once you have mastered the basics of Python.
 Workshop Sections
 =================
 
-I've broken up the workshop into sections:
-
-* `Reading sequence files <reading_sequence_files/README.rst>`_.
-* `Writing sequence files <writing_sequence_files/README.rst>`_.
-* `Working with sequence features <using_seqfeatures/README.rst>`_.
-
-
 This material focuses on Biopython's `SeqIO <http://biopython.org/wiki/SeqIO>`_
 and `AlignIO <http://biopython.org/wiki/AlignIO>`_ modules (these links
-include an overview and tables of supported file formats), each of which
+include an overview and tables of supported file formats) and Seq Objects, each of which
 also has a whole chapter in the `Biopython Tutorial & Cookbook
 <http://biopython.org/DIST/docs/tutorial/Tutorial.html>`_
 (`PDF <http://biopython.org/DIST/docs/tutorial/Tutorial.pdf>`_)
