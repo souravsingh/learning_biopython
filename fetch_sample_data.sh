@@ -30,7 +30,7 @@ echo "Fetch proteins from Potato Genome Sequencing Consortium"
 echo "=========================================================="
 
 $FETCH solanaceae.plantbiology.msu.edu/data/PGSC_DM_v4.03_unanchored_regions_chr00.fasta.zip
-unzip -o PGSC_DM_v3.4_pep_representative.fasta.zip
+unzip -o PGSC_DM_v4.03_unanchored_regions_chr00.fasta.zip
 
 echo "===================================="
 echo "Fetch PF08792 alignment from PFAM"
