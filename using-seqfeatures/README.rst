@@ -14,9 +14,9 @@ start from the code to read in a FASTA file:
 .. sourcecode:: pycon
 
     >>> from Bio import SeqIO
-    >>> record = SeqIO.read("NC_000913.fna", "fasta")
+    >>> record = SeqIO.read("NC_013361.fna", "fasta")
     >>> print(record.id)
-    gi|556503834|ref|NC_000913.3|
+    gi|556503834|ref|NC_013361.3|
     >>> print(len(record))
     4641652
     >>> print(len(record.features))
@@ -27,9 +27,9 @@ Now switch the filename and the format:
 .. sourcecode::	pycon
 
     >>> from Bio import SeqIO
-    >>> record = SeqIO.read("NC_000913.gbk", "genbank")
+    >>> record = SeqIO.read("NC_013361.gbk", "genbank")
     >>> print(record.id)
-    NC_000913.3
+    NC_013361.3
     >>> print(len(record))
     4641652
     >>> print(len(record.features))
@@ -81,7 +81,7 @@ types. Continuing with the same example:
 .. sourcecode:: pycon
 
     >>> from Bio import SeqIO
-    >>> record = SeqIO.read("NC_000913.gbk", "genbank")
+    >>> record = SeqIO.read("NC_013361.gbk", "genbank")
     >>> my_gene = record.features[3]
     >>> print(my_gene.qualifiers["locus_tag"])
     ['b0002']
@@ -137,7 +137,7 @@ Sometimes, as in the *E. coli* exmaple, you will find the translation is
 provided in the qualifiers:
 
     >>> from Bio import SeqIO
-    >>> record = SeqIO.read("NC_000913.gbk", "genbank")
+    >>> record = SeqIO.read("NC_013361.gbk", "genbank")
     >>> my_cds = record.features[4]
     >>> print(my_cds.qualifiers["locus_tag"])
     ['b0002']
